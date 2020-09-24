@@ -1,0 +1,41 @@
+{
+  "name": "account-balance-tracker",
+  "version": "1.0.0",
+  "description": "A simple account balance tracker, that takes income, expenses and shows how much is left",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kilu691/account-balance-tracker.git"
+  },
+  "author": "Ernest Szczeblewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kilu691/account-balance-tracker/issues"
+  },
+  "homepage": "https://github.com/Kilu691/account-balance-tracker#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-wesbos": "^1.0.0",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.1",
+    "sass": "^1.26.11"
+  },
+  "eslintConfig": {
+    "extends": [
+      "wesbos"
+    ]
+  }
+}
