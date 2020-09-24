@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "parcel index.html",
+    "prebuild": "rmdir dist /s /q",
     "build": "parcel build index.html"
   },
   "repository": {
@@ -37,5 +38,8 @@
     "extends": [
       "wesbos"
     ]
+  },
+  "dependencies": {
+    "dompurify": "^2.1.0"
   }
 }

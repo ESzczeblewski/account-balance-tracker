@@ -1,3 +1,5 @@
+import { sanitize } from 'dompurify';
+
 const form = document.querySelector('.add');
 const inputText = document.querySelector('input[name="name"]');
 const inputNumber = document.querySelector('input[name="value"]');
@@ -29,12 +31,15 @@ function addToHistory() {
     .map(
       (item) => `<li class="${item.plus ? 'plus' : 'minus'}">
     <button value="${item.id}">&times;</button>
-    ${item.name}
-    <span">${item.value}</span>
+    <span class="name">${item.name}</span>
+    <span class="value">${item.value}</span>
     </li>`
     )
     .join('');
-  historyList.innerHTML = html;
+  historyList.innerHTML = sanitize(html, {
+    FORBID_TAGS: ['style'],
+    FORBID_ATTR: ['style'],
+  });
 }
 
 function identifyTransaction() {
