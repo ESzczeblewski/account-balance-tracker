@@ -47,15 +47,17 @@ function identifyTransaction() {
   let currentExpenses = 0;
   state.forEach(function (item) {
     if (item.value > 0) {
-      currentIncome += parseInt(item.value);
+      currentIncome += parseFloat(item.value);
     } else if (item.value < 0) {
-      currentExpenses += parseInt(item.value);
+      currentExpenses += parseFloat(item.value);
     }
   });
   income.textContent = `$${currentIncome}`;
   expense.textContent = `$${currentExpenses}`;
   // Update overall balance
-  currentBalance.textContent = `$${currentIncome + currentExpenses}`;
+  currentBalance.textContent = parseFloat(
+    currentIncome + currentExpenses
+  ).toFixed(2);
 }
 function deleteTransaction(id) {
   const newState = state.filter(function (item) {
@@ -83,7 +85,7 @@ historyList.addEventListener('listUpdated', identifyTransaction);
 historyList.addEventListener('listUpdated', addToHistory);
 historyList.addEventListener('listUpdated', saveStateToLocalStorage);
 historyList.addEventListener('click', function (e) {
-  const id = parseInt(e.target.value);
+  const id = parseFloat(e.target.value);
   deleteTransaction(id);
 });
 restoreFromLocalStorage();
